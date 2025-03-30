@@ -51,6 +51,10 @@ local Window = UILib:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("Main", 4483362458)
+local CurrentMusicEnabled = true
+if SoundService.Background.PlaybackSpeed == 0 then
+    CurrentMusicEnabled = false
+end
 local MusicToggle = MainTab:CreateToggle({
     Name = "Music",
     CurrentValue = (SoundService.Background.PlaybackSpeed == 1),
