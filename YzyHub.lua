@@ -57,7 +57,7 @@ if SoundService.Background.PlaybackSpeed == 0 then
 end
 local MusicToggle = MainTab:CreateToggle({
     Name = "Music",
-    CurrentValue = (SoundService.Background.PlaybackSpeed == 1),
+    CurrentValue = CurrentMusicEnabled,
     Flag = "MusicToggle",
     Callback = function(Value)
         if SoundService:FindFirstChild("Background") then
