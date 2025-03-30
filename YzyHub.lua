@@ -1,3 +1,7 @@
+local SoundService = game:GetService("SoundService")
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+
 local UILib = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 print("Yzy Hub Loading...")
@@ -47,5 +51,19 @@ local Window = UILib:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("Main", 4483362458)
+local MusicToggle = MainTab:CreateToggle({
+    Name = "Music",
+    CurrentValue = true,
+    Flag = "MusicToggle",
+    Callback = function(Value)
+        if SoundService:FindFirstChild("Background") then
+            if Value then
+                SoundService.Background:AdjustSpeed(0)
+            else
+                SoundService.Background:AdjustSpeed(1)
+            end
+        end
+    end,
+})
 
 print("Yzy Hub Loaded Successfully!")
