@@ -58,9 +58,9 @@ local MusicToggle = MainTab:CreateToggle({
     Callback = function(Value)
         if SoundService:FindFirstChild("Background") then
             if Value then
-                SoundService.Background:AdjustSpeed(0)
+                SoundService.Background.PlaybackSpeed = 0
             else
-                SoundService.Background:AdjustSpeed(1)
+                SoundService.Background.PlaybackSpeed = 1
             end
         end
     end,
